@@ -1,8 +1,12 @@
 #!/bin/sh
-#put line to /etc/rc.local for autorun ()
-sudo sed -i 's|exit 0|sudo nohup mavproxy.py \nexit 0|' /etc/rc.local
+#put line to /etc/rc.local for autorun: 
+#	mavproxy.py --master=/dev/serial0  --baudrate 921600 --out=udp:10.243.0.1:14550
+sudo sed -i 's|exit 0|nohup mavproxy.py \nexit 0|' /etc/rc.local
+sudo nano /etc/rc.local
 
-
+# ps -fA | grep mavproxy.py
+	
+sudo apt-get remove modemmanager -y
 sudo apt-get install python3-dev python3-opencv python3-wxgtk4.0 python3-pip python3-matplotlib python3-lxml python3-pygame -y
 pip3 install PyYAML mavproxy --user
 echo 'export PATH="$PATH:$HOME/.local/bin"' >> ~/.bashrc
