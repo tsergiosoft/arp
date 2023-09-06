@@ -1,7 +1,7 @@
 #!/bin/sh
 #put line to /etc/rc.local for autorun: 
 #	mavproxy.py --master=/dev/serial0  --baudrate 921600 --out=udp:10.243.0.1:14550
-sudo sed -i 's|exit 0|nohup mavproxy.py \nexit 0|' /etc/rc.local
+sudo sed -i 's|exit 0|nohup mavproxy.py --master=/dev/serial0  --baudrate 921600 --out=udp:10.243.0.1:14550\nexit 0|' /etc/rc.local
 sudo nano /etc/rc.local
 
 # ps -fA | grep mavproxy.py
