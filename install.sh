@@ -1,5 +1,5 @@
 #!/bin/sh
-sudo sed -i 's|exit 0|sudo python3 mav_rc_local.py \&\nexit 0|' /etc/rc.local
+sudo sed -i 's|exit 0|sudo python3 mav_rc_local.py \nexit 0|' /etc/rc.local
 
 
 sudo apt-get install python3-dev python3-opencv python3-wxgtk4.0 python3-pip python3-matplotlib python3-lxml python3-pygame -y
