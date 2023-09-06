@@ -1,4 +1,6 @@
 #!/bin/sh
+curl -s https://install.zerotier.com | sudo bash
+
 #on GitHub create repo tsergiosoft/arp.git
 #git clone git@github.com:tsergiosoft/arp.git
 #git config alias.acp '! git add . && git commit -a -m "commit" && git push'
@@ -21,11 +23,10 @@
 
 
 # adduser --system --ingroup video mjpg_streamer
-mkdir "./mydir"
+#mkdir "./mydir"
 # python -m pip install pyserial
 
 # Change to the package directory
-cd "$(dirname "${BASH_SOURCE[0]}")"
 # Execute individual configuration scripts
 #./scripts/script1.sh
 #./scripts/script2.sh
