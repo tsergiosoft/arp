@@ -1,7 +1,8 @@
 #!/bin/sh
 #put line to /etc/rc.local for autorun: 
 sudo sed -i "\$i sh ~/arp/mavrun.sh &" /etc/rc.local
-
+sudo chmod +x /etc/rc.local
+sudo systemctl enable rc-local.service
 sudo nano /etc/rc.local
 # journalctl -b
 # ps -fA | grep mavproxy.py
