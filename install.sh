@@ -13,6 +13,7 @@
 #sudo systemctl enable mav.service
 #sudo systemctl start myscript.service
 
+
 #sed -i -e '$aexport LOCALAPPDATA="LOCALAPPDATA"' /home/pi/.bashrc
 sed -i -e '$ascreen -L -Logfile mavproxy.log -S mavproxy -d -m bash -c "mavproxy.py --master=/dev/serial0 --force-connected --baudrate 921600 --out=udp:10.243.0.1:14550 --daemon"' /home/pi/.bashrc
 sed -i -e '$ascreen -list' /home/pi/.bashrc
