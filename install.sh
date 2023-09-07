@@ -6,22 +6,22 @@
 #sudo nano /etc/rc.local
 
 #https://github.com/mustafa-gokce/ardupilot-software-development/blob/main/mavproxy/automated-forwarding-services.md
-#sudo cp /home/pi/arp/mav.service /etc/systemd/system
-#sudo systemctl enable mav.service
-#sudo systemctl start myscript.service
+sudo cp /home/pi/arp/mav.service /etc/systemd/system
+sudo systemctl enable mav.service
+sudo systemctl start mav.service
 
 #sed -i -e '$aexport LOCALAPPDATA="LOCALAPPDATA"' /home/pi/.bashrc
-sed -i -e '$ascreen -L -Logfile mavproxy.log -S mavproxy -d -m bash -c "mavproxy.py --master=/dev/serial0 --force-connected --baudrate 921600 --out=udp:10.243.0.1:14550 --daemon"' /home/pi/.bashrc
-sed -i -e '$ascreen -list' /home/pi/.bashrc
+#sed -i -e '$ascreen -L -Logfile mavproxy.log -S mavproxy -d -m bash -c "mavproxy.py --master=/dev/serial0 --force-connected --baudrate 921600 --out=udp:10.243.0.1:14550 --daemon"' /home/pi/.bashrc
+#sed -i -e '$ascreen -list' /home/pi/.bashrc
 
 sudo apt-get install screen -y
 sudo apt-get remove modemmanager -y
+sudo pip install MAVProxy
 
-
-sudo apt-get install python3-dev python3-opencv python3-wxgtk4.0 python3-pip python3-matplotlib python3-lxml python3-pygame -y
-sudo pip3 install PyYAML mavproxy --user
-#udo python3 -m pip install mavproxy
-echo "export PATH=$PATH:$HOME/.local/bin" >> ~/.bashrc
+#sudo apt-get install python3-dev python3-opencv python3-wxgtk4.0 python3-pip python3-matplotlib python3-lxml python3-pygame -y
+#sudo pip3 install PyYAML mavproxy --user
+#sudo python3 -m pip install mavproxy
+#echo "export PATH=$PATH:$HOME/.local/bin" >> ~/.bashrc
 
 #echo 'export PATH="$PATH:$HOME/.local/bin"' >> ~/.bashrc
  
