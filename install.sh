@@ -1,6 +1,5 @@
 #!/bin/sh
 #put line to /etc/rc.local for autorun: 
-#	/home/s/.local/bin/mavproxy.py --master=/dev/serial0  --baudrate 921600 --out=udp:10.243.0.1:14550
 sudo sed -i "\$i sh ~/arp/mavrun.sh &" /etc/rc.local
 
 sudo nano /etc/rc.local
