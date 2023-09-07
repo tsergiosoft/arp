@@ -1,16 +1,14 @@
 #!/bin/sh
+echo "----------apt update"
+sudo apt update
 echo "----------Install screen, Remove modemmanager"
-
 sudo apt-get install screen -y
 sudo apt-get remove modemmanager -y
 echo "----------Install MAVProxy"
-
 sudo pip install MAVProxy
-
 echo "----------Install ZeroTier"
 curl -s https://install.zerotier.com | sudo bash
 sudo zerotier-cli join 1d71939404a9b1e4
-
 echo "----------Create service mav"
 #https://github.com/mustafa-gokce/ardupilot-software-development/blob/main/mavproxy/automated-forwarding-services.md
 sudo cp /home/pi/arp/mav.service /etc/systemd/system
