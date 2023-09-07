@@ -4,7 +4,7 @@ After=network-online.target
 Wants=network-online.target
 
 [Service]
-Type=simple
+Type=idle
 User=pi
 WorkingDirectory=/home/pi/arp
 ExecStart=/home/pi/arp/mavrun.sh
