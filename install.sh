@@ -18,10 +18,13 @@
 
 sudo apt-get install screen -y
 sudo apt-get remove modemmanager -y
-sudo apt-get install python3-dev python3-opencv python3-wxgtk4.0 python3-pip python3-matplotlib python3-lxml python3-pygame -y
-pip3 install PyYAML mavproxy --user
-echo 'export PATH="$PATH:$HOME/.local/bin"' >> ~/.bashrc
+#sudo apt-get install python3-dev python3-opencv python3-wxgtk4.0 python3-pip python3-matplotlib python3-lxml python3-pygame -y
+#pip3 install PyYAML mavproxy --user
+#echo 'export PATH="$PATH:$HOME/.local/bin"' >> ~/.bashrc
 
+sudo python3 -m pip install --upgrade mavproxy
+echo "export PATH=$PATH:$HOME/.local/bin" >> ~/.bashrc
+ 
 sudo cp /home/pi/arp/mavpath.sh /etc/profile.d
 
 curl -s https://install.zerotier.com | sudo bash
