@@ -1,15 +1,16 @@
 #!/bin/sh
 #put line to /etc/rc.local for autorun: 
-sudo sed -i "\$i sh ~/arp/mavrun.sh &" /etc/rc.local
-sudo chmod +x /etc/rc.local
-sudo systemctl enable rc-local.service
-sudo nano /etc/rc.local
+#sudo sed -i "\$i sh ~/arp/mavrun.sh &" /etc/rc.local
+#sudo chmod +x /etc/rc.local
+#sudo systemctl enable rc-local.service
+#sudo nano /etc/rc.local
 # journalctl -b
 # ps -fA | grep mavproxy.py
 
-#https://github.com/mustafa-gokce/ardupilot-software-development/blob/main/mavproxy/automated-forwarding-services.md
-sudo apt-get install screen -y
 
+#https://github.com/mustafa-gokce/ardupilot-software-development/blob/main/mavproxy/automated-forwarding-services.md
+cp /home/pi/arp/mav.service /etc/systemd/system
+sudo apt-get install screen -y
 sudo apt-get remove modemmanager -y
 sudo apt-get install python3-dev python3-opencv python3-wxgtk4.0 python3-pip python3-matplotlib python3-lxml python3-pygame -y
 pip3 install PyYAML mavproxy --user
