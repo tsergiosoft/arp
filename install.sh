@@ -2,12 +2,14 @@
 #put line to /etc/rc.local for autorun: 
 #	/home/s/.local/bin/mavproxy.py --master=/dev/serial0  --baudrate 921600 --out=udp:10.243.0.1:14550
 #sudo sed -i 's|exit 0|nohup /home/s/.local/bin/mavproxy.py --master=/dev/serial0  --baudrate 921600 --out=udp:10.243.0.1:14550\nexit 0|' /etc/rc.local
+#sed '/^sh /home/m/startup.sh & before=exit 0' /etc/rc.local
+sed -i '/exit 0/s/^/sh /home/m/startup.sh &\n/' /etc/rc.local
 sudo nano /etc/rc.local
 # journalctl -b
 # ps -fA | grep mavproxy.py
 
 #https://github.com/mustafa-gokce/ardupilot-software-development/blob/main/mavproxy/automated-forwarding-services.md
-sudo apt-get install screen
+sudo apt-get install screen -y
 
 sudo apt-get remove modemmanager -y
 sudo apt-get install python3-dev python3-opencv python3-wxgtk4.0 python3-pip python3-matplotlib python3-lxml python3-pygame -y
