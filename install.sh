@@ -1,9 +1,12 @@
 #!/bin/sh
 echo "----------apt update"
 sudo apt update
-echo "----------Install screen, Remove modemmanager"
+echo "----------Install screen"
 sudo apt-get install screen -y
+echo "----------Remove modemmanager"
 sudo apt-get remove modemmanager -y
+echo "----------Install pip3"
+sudo apt-get install python3-pip -y
 echo "----------Install MAVProxy"
 sudo pip install MAVProxy
 echo "----------Install ZeroTier"
