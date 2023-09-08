@@ -18,6 +18,29 @@ sudo cp /home/pi/arp/mav.service /etc/systemd/system
 sudo systemctl enable mav.service
 sudo systemctl start mav.service
 
+cd ~
+git clone https://github.com/tsergiosoft/mjpg-streamer.git
+sudo apt-get install cmake -y
+#sudo apt-get install libjpeg8-dev -y
+sudo apt-get install libjpeg62-turbo-dev -y
+sudo apt-get install gcc g++ -y
+sudo apt-get install cmake
+cd ~/mjpg-streamer/mjpg-streamer-experimental
+make
+sudo make install
+
+sudo apt install v4l-utils
+#./mjpg_streamer -i "input_uvc.so -r 1024x768 -f 15" -o "output_http.so -w ./www"
+#./mjpg_streamer -i "input_uvc.so -r 160x120 -f 15" -o "output_http.so -w ./www"
+#./mjpg_streamer -i "input_uvc.so -f 30 -r 640x480" -o "output_http.so -w /usr/local/share/mjpg-streamer/www"
+
+#http://127.0.0.1:8080/?action=stream
+#v4l2-ctl --list-formats-ext
+
+#/boot/config.txt entries to disable both Bluetooth and WiFi.
+#dtoverlay=disable-bt
+#dtoverlay=disable-wifi
+
 #sed -i -e '$aexport LOCALAPPDATA="LOCALAPPDATA"' /home/pi/.bashrc
 #sed -i -e '$ascreen -L -Logfile mavproxy.log -S mavproxy -d -m bash -c "mavproxy.py --master=/dev/serial0 --force-connected --baudrate 921600 --out=udp:10.243.0.1:14550 --daemon"' /home/pi/.bashrc
 #sed -i -e '$ascreen -list' /home/pi/.bashrc
