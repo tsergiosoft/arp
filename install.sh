@@ -1,4 +1,5 @@
 #!/bin/sh
+# .git\config [alias]	acp = ! git add . && git commit -a -m \"commit\" && git push
 echo "----------apt update"
 sudo apt update
 echo "----------Install screen"
@@ -30,6 +31,8 @@ make
 sudo make install
 
 sudo apt install v4l-utils
+./mjpg_streamer -i "./input_uvc.so -d /dev/video0 -n -f 15" -o "./output_http.so -p 8080 -w ./www"
+
 #./mjpg_streamer -i "input_uvc.so -r 1024x768 -f 15" -o "output_http.so -w ./www"
 #./mjpg_streamer -i "input_uvc.so -r 160x120 -f 15" -o "output_http.so -w ./www"
 #./mjpg_streamer -i "input_uvc.so -f 30 -r 640x480" -o "output_http.so -w /usr/local/share/mjpg-streamer/www"
