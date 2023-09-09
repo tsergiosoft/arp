@@ -31,11 +31,16 @@ make
 sudo make install
 
 sudo apt install v4l-utils
-./mjpg_streamer -i "./input_uvc.so -d /dev/video0 -n -f 15" -o "./output_http.so -p 8080 -w ./www"
+sudo apt-get install libjpeg8-dev imagemagick libv4l-dev
+#ffmpeg -i /dev/video0 -vframes 1 output.png
+
+cd ~/mjpg-streamer/mjpg-streamer-experimental
+export LD_LIBRARY_PATH=.
+
+mjpg_streamer -i 'input_uvc.so -d /dev/video0  -f 15 -y -n' -o 'output_http.so -w ./www -p 8080'
 
 #./mjpg_streamer -i "input_uvc.so -r 1024x768 -f 15" -o "output_http.so -w ./www"
 #./mjpg_streamer -i "input_uvc.so -r 160x120 -f 15" -o "output_http.so -w ./www"
-#./mjpg_streamer -i "input_uvc.so -f 30 -r 640x480" -o "output_http.so -w /usr/local/share/mjpg-streamer/www"
 
 #http://127.0.0.1:8080/?action=stream
 #v4l2-ctl --list-formats-ext
@@ -92,5 +97,4 @@ sudo apt install v4l-utils
 # On Ubuntu - create ssh
 # cd ~/.ssh
 #ssh-keygen -t ed25519 -C "sergtarasenko76@gmail.com"
-
 
