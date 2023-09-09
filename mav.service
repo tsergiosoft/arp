@@ -7,7 +7,7 @@ Wants=network-online.target
 Type=idle
 User=pi
 WorkingDirectory=/home/pi/arp
-ExecStart=/home/pi/arp/mavrun.sh
+ExecStart=/home/pi/arp/arprun.sh
 
 [Install]
 WantedBy=multi-user.target
