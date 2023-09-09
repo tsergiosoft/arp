@@ -1,7 +1,7 @@
 #!/bin/sh
 # .git\config [alias]	acp = ! git add . && git commit -a -m \"commit\" && git push
 echo "----------apt update"
-sudo apt update
+sudo #apt update
 echo "----------Install screen"
 sudo apt-get install screen -y
 echo "----------Remove modemmanager"
@@ -17,10 +17,11 @@ echo "----------Create service mav"
 #https://github.com/mustafa-gokce/ardupilot-software-development/blob/main/mavproxy/automated-forwarding-services.md
 sudo cp /home/pi/arp/mav.service /etc/systemd/system
 sudo systemctl enable mav.service
-sudo systemctl start mav.service
+#sudo systemctl start mav.service
 
 cd ~
-git clone https://github.com/tsergiosoft/mjpg-streamer.git
+git clone https://github.com/jacksonliam/mjpg-streamer.git
+#git clone https://github.com/tsergiosoft/mjpg-streamer.git
 sudo apt-get install cmake -y
 #sudo apt-get install libjpeg8-dev -y
 sudo apt-get install libjpeg62-turbo-dev -y
@@ -30,17 +31,13 @@ cd ~/mjpg-streamer/mjpg-streamer-experimental
 make
 sudo make install
 
-sudo apt install v4l-utils
-sudo apt-get install libjpeg8-dev imagemagick libv4l-dev
+#sudo apt install v4l-utils
+#sudo apt-get install libjpeg8-dev imagemagick libv4l-dev
 #ffmpeg -i /dev/video0 -vframes 1 output.png
 
-cd ~/mjpg-streamer/mjpg-streamer-experimental
-export LD_LIBRARY_PATH=.
-
-mjpg_streamer -i 'input_uvc.so -d /dev/video0  -f 15 -y -n' -o 'output_http.so -w ./www -p 8080'
-
-#./mjpg_streamer -i "input_uvc.so -r 1024x768 -f 15" -o "output_http.so -w ./www"
-#./mjpg_streamer -i "input_uvc.so -r 160x120 -f 15" -o "output_http.so -w ./www"
+#cd ~/mjpg-streamer/mjpg-streamer-experimental
+#export LD_LIBRARY_PATH=.
+#mjpg_streamer -i 'input_uvc.so -d /dev/video0  -f 15 -y -n' -o 'output_http.so -w ./www -p 8080'
 
 #http://127.0.0.1:8080/?action=stream
 #v4l2-ctl --list-formats-ext
