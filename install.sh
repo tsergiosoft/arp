@@ -38,7 +38,8 @@ sudo systemctl start awm.service
 echo "----------PAUSE 10s"
 pause 10
 screen -list
-
+echo "----------Install finish OK"
+--------------------------------------------END----------------------------------------------
 #sudo apt install v4l-utils
 #sudo apt-get install libjpeg8-dev imagemagick libv4l-dev
 #ffmpeg -i /dev/video0 -vframes 1 output.png
@@ -49,6 +50,7 @@ screen -list
 
 #http://127.0.0.1:8080/?action=stream
 #v4l2-ctl --list-formats-ext
+# http://picamera.readthedocs.io/en/latest/recipes2.html#web-streaming
 
 #/boot/config.txt entries to disable both Bluetooth and WiFi.
 #dtoverlay=disable-bt
@@ -69,10 +71,6 @@ screen -list
 #sudo python3 -m pip install mavproxy
 #echo "export PATH=$PATH:$HOME/.local/bin" >> ~/.bashrc
 
-#echo 'export PATH="$PATH:$HOME/.local/bin"' >> ~/.bashrc
- 
-
-
 ####   Raspberry Pi   ############################
 #sudo raspi-config -> serial port enable, (autologin pi)
 #$ git clone https://github.com/tsergiosoft/arp.git
@@ -81,26 +79,13 @@ screen -list
 # git pull origin main
 
 #sudo ip link set wlan0 down
-#
 ################################
 #on GitHub create repo tsergiosoft/arp.git
 #$ git clone git@github.com:tsergiosoft/arp.git
 #$ git config alias.acp '! git add . && git commit -a -m "commit" && git push'
 #	Usage!!!!: git acp
 
-#echo "# piard" >> README.md
-#git init
-#git config core.filemode true
-#git add README.md
-#git commit -m "first commit"
-#git branch -M main
-#git remote add origin git@github.com:tsergiosoft/piard.git
-#git push -u origin main
 
-#git update-index --chmod=+x install.sh
-
-
-# On Ubuntu - create ssh
-# cd ~/.ssh
+################################# On Ubuntu - create ssh
 #ssh-keygen -t ed25519 -C "sergtarasenko76@gmail.com"
 
