@@ -7,7 +7,7 @@ Wants=network-online.target
 Type=idle
 User=pi
 WorkingDirectory=/home/pi/awm
-ExecStart=/home/pi/arp/awmrun.sh
+ExecStart=/home/pi/awm/awmrun.sh
 
 [Install]
 WantedBy=multi-user.target
