@@ -1,7 +1,7 @@
 #!/bin/sh
 # .git\config [alias]	acp = ! git add . && git commit -a -m \"commit\" && git push
 echo "----------apt update"
-sudo #apt update
+sudo apt update
 echo "----------Install screen"
 sudo apt-get install screen -y
 echo "----------Remove modemmanager"
