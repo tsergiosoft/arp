@@ -66,7 +66,7 @@ sudo make install
 
 
 ####   Raspberry Pi   ############################
-#sudo raspi-config -> serial port enable
+#sudo raspi-config -> serial port enable, (autologin pi)
 #$ git clone https://github.com/tsergiosoft/arp.git
 #$ cd arp
 #$ ./install.sh
