@@ -6,8 +6,8 @@ Wants=network-online.target
 [Service]
 Type=idle
 User=pi
-WorkingDirectory=/home/pi/arp
-ExecStart=/home/pi/arp/arprun.sh
+WorkingDirectory=/home/pi/awm
+ExecStart=/home/pi/arp/awmrun.sh
 
 [Install]
 WantedBy=multi-user.target
