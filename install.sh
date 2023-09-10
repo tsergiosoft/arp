@@ -1,5 +1,7 @@
 #!/bin/sh
 # .git\config [alias]	acp = ! git add . && git commit -a -m \"commit\" && git push
+HOME=/home/pi
+echo "home folder is"=$HOME
 echo "----------apt update"
 sudo apt update
 sudo apt upgrade
@@ -14,23 +16,28 @@ sudo pip install MAVProxy
 echo "----------Install ZeroTier"
 curl -s https://install.zerotier.com | sudo bash
 sudo zerotier-cli join 1d71939404a9b1e4
-echo "----------Create service mav"
-#https://github.com/mustafa-gokce/ardupilot-software-development/blob/main/mavproxy/automated-forwarding-services.md
-sudo cp /home/pi/arp/mav.service /etc/systemd/system
-sudo systemctl enable mav.service
-#sudo systemctl start mav.service
 
-cd ~
-git clone https://github.com/jacksonliam/mjpg-streamer.git
-#git clone https://github.com/tsergiosoft/mjpg-streamer.git
+cd $HOME
+#git clone https://github.com/jacksonliam/mjpg-streamer.git
+git clone https://github.com/tsergiosoft/mjpg-streamer.git
 sudo apt-get install cmake -y
 #sudo apt-get install libjpeg8-dev -y
 sudo apt-get install libjpeg62-turbo-dev -y
 sudo apt-get install gcc g++ -y
 sudo apt-get install cmake
-cd ~/mjpg-streamer/mjpg-streamer-experimental
+cd $HOME/mjpg-streamer/mjpg-streamer-experimental
 make
 sudo make install
+
+echo "----------Create service mav"
+#https://github.com/mustafa-gokce/ardupilot-software-development/blob/main/mavproxy/automated-forwarding-services.md
+sudo cp $HOME/awm/awm.service /etc/systemd/system
+sudo systemctl enable awm.service
+echo "----------Start service mav"
+sudo systemctl start awm.service
+echo "----------PAUSE 10s"
+pause 10
+screen -list
 
 #sudo apt install v4l-utils
 #sudo apt-get install libjpeg8-dev imagemagick libv4l-dev
