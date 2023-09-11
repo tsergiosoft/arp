@@ -5,3 +5,12 @@ Hostname github.com
 IdentityFile ~/.ssh/id_ed25519
 TCPKeepAlive yes
 IdentitiesOnly yes
+
+Host 34.118.38.72
+	User sergtarasenko76
+#Hostname instance-1
+	IdentityFile ~/.ssh/e2c
+	TCPKeepAlive yes
+	IdentitiesOnly yes
+	RemoteForward 14455 localhost:14455
+	RemoteForward 8080 localhost:8080
