@@ -1,5 +1,6 @@
 #!/bin/sh
 # .git\config [alias]	acp = ! git add . && git commit -a -m \"commit\" && git push
+# ssh-add
 HOME=/home/pi
 echo "home folder is"=$HOME
 echo "----------apt update"
