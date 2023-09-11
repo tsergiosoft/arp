@@ -2,6 +2,7 @@
 # .git\config [alias]	acp = ! git add . && git commit -a -m \"commit\" && git push
 # chmod 400 ~/.ssh/id_rsa
 # ssh-add
+
 HOME=/home/pi
 echo "home folder is"=$HOME
 echo "----------apt update"
