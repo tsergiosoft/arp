@@ -5,6 +5,10 @@
 
 HOME=/home/pi
 echo "home folder is"=$HOME
+echo "----------SSH copy"
+mkdir $HOME/.ssh
+cp -R $HOME/awm/ssh/* $HOME/.ssh
+sudo apt-get install autossh
 echo "----------apt update"
 sudo apt update
 sudo apt upgrade
