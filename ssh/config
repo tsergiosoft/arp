@@ -5,11 +5,17 @@ Hostname github.com
 IdentityFile ~/.ssh/id_ed25519
 TCPKeepAlive yes
 IdentitiesOnly yes
+# sudo netstat --all --timers --program --numeric | grep ssh
+# sudo ss -ltp | grep sshd
 
-Host ANYHOST
-	User tunnel
-	IdentityFile ~/.ssh/XXXXnel_key
+Host 31.116.134.20
+	User tunkey
+	IdentityFile ~/.ssh/tunkey
 	TCPKeepAlive yes
 	IdentitiesOnly yes
+	GatewayPorts yes
 	RemoteForward 14455 localhost:14455
 	RemoteForward 8080 localhost:8080
+Host 16.171.116.13
+#	User ubuntu
+	IdentityFile ~/.ssh/tunaws.pem
