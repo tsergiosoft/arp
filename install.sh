@@ -3,10 +3,16 @@
 # chmod 400 ~/.ssh/id_rsa
 # ssh-add
 
-#RasPi ssh -N -R 0.0.0.0:5000:localhost:8080 ubuntu@16.171.116.13 -v
+#RasPi ssh -N -i ~/.ssh/tunaws.pem -R 0.0.0.0:5000:localhost:8080 ubuntu@13.50.210.14 -v
+#RasPi ssh -N -i ~/.ssh/tunaws.pem -R 0.0.0.0:5000:localhost:8080 ubuntu@13.50.210.14
+#
+#Check from any host: Ubuntu: ssh -i ~/.ssh/tunaws.pem ubuntu@13.50.210.14
+#----AWS terminal: $ sudo netstat --all --timers --program --numeric | grep ssh
+
+
 #GCS ssh -N -L 1234:localhost:5000 ubuntu@16.171.116.13 -v -i C:\Users\Tarasenko_S\.ssh\tunaws.pem
 # http://127.0.0.1:5000/
-#or http://16.171.116.13:5000/
+#or -----------------http://16.171.116.13:5000/-----------
 
 HOME=/home/pi
 echo "home folder is"=$HOME
