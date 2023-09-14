@@ -1,5 +1,5 @@
 #!/bin/bash
-KEY="tunkey"
+KEY="tunaws.pem"
 CLOUDHOST="13.50.210.14"
 USER="ubuntu"
 #KEY=tunaws.pem
