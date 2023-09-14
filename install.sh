@@ -25,7 +25,7 @@ echo "----------apt update"
 sudo apt update
 sudo apt upgrade
 echo "----------Install netcat"
-sudo apt-get install netcat -y
+sudo sudo apt-get install ncat -y
 echo "----------Install screen"
 sudo apt-get install screen -y
 echo "----------Remove modemmanager"
