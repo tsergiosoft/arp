@@ -1,8 +1,16 @@
 #!/bin/bash
+KEY="tunkey"
 CLOUDHOST="13.50.210.14"
+USER="ubuntu"
+#KEY=tunaws.pem
+#CLOUDHOST="34.118.38.72"
+#USER="tunkey"
 REMOTE_PORT="14550"
 LOCPORT="14550"
-SSH_COMMAND="ssh -N -i ~/.ssh/tunaws.pem -o ServerAliveCountMax=2 -o ServerAliveInterval=10 -R $REMOTE_PORT:localhost:$LOCPORT ubuntu@$CLOUDHOST"
+SSH_COMMAND="ssh -N -i ~/.ssh/$KEY -o ServerAliveCountMax=2 -o ServerAliveInterval=15 -R $REMOTE_PORT:localhost:$LOCPORT $USER@$CLOUDHOST"
+
+
+
 
 
 
