@@ -8,7 +8,7 @@ USER="ubuntu"
 REMOTE_PORT="14550"
 LOCPORT="14550"
 #SSH_COMMAND="ssh -N -i ~/.ssh/$KEY -o ServerAliveCountMax=2 -o ServerAliveInterval=15 -R $REMOTE_PORT:localhost:$LOCPORT $USER@$CLOUDHOST"
-SSH_COMMAND="ssh -N -i ~/.ssh/$KEY -o ClientAliveCountMax=2 -o ClientAliveInterval=15 -R $REMOTE_PORT:localhost:$LOCPORT $USER@$CLOUDHOST"
+SSH_COMMAND="ssh -N -i ~/.ssh/$KEY -o ClientAliveInterval=15 -R $REMOTE_PORT:localhost:$LOCPORT $USER@$CLOUDHOST"
 
 
 
