@@ -16,6 +16,9 @@ Host 31.116.134.20
 	GatewayPorts yes
 	RemoteForward 14455 localhost:14455
 	RemoteForward 8080 localhost:8080
-Host 16.171.116.13
-#	User ubuntu
+Host 13.50.210.14
 	IdentityFile ~/.ssh/tunaws.pem
+	ControlMaster auto
+        ControlPersist 1m
+        ServerAliveCountMax 2
+        ServerAliveInterval 20

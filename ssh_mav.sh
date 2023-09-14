@@ -4,6 +4,9 @@ REMOTE_PORT="14550"
 LOCPORT="14550"
 SSH_COMMAND="ssh -N -i ~/.ssh/tunaws.pem -o ServerAliveCountMax=2 -o ServerAliveInterval=10 -R $REMOTE_PORT:localhost:$LOCPORT ubuntu@$CLOUDHOST"
 
+
+
+
 function ssh_remote_connect {
     while true; do
 	current_time=$(date +"%T")

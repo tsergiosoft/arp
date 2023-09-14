@@ -2,8 +2,11 @@
 CLOUDHOST="13.50.210.14"
 REMOTE_PORT="5000"
 LOCPORT="8080"
-SSH_COMMAND="ssh -N -i ~/.ssh/tunaws.pem -o ServerAliveCountMax=2 -o ServerAliveInterval=10 -R $REMOTE_PORT:localhost:$LOCPORT ubuntu@$CLOUDHOST"
-
+SSH_COMMAND="ssh -N -i ~/.ssh/tunaws.pem -o ServerAliveCountMax=2 -o ServerAliveInterval=15 -R $REMOTE_PORT:localhost:$LOCPORT ubuntu@$CLOUDHOST"
+#SSH_COMMAND="ssh -N -R $REMOTE_PORT:localhost:$LOCPORT ubuntu@$CLOUDHOST"
+#ssh -N -R 5000:localhost:8080 ubuntu@13.50.210.14
+#ncat --sh-exec "echo >/dev/null" -w 1 13.50.210.14 5000
+#nc -z -w 1 13.50.210.14 5000
 function ssh_remote_connect {
     while true; do
 	current_time=$(date +"%T")
