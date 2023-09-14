@@ -21,10 +21,11 @@ mkdir $HOME/.ssh
 cp -R $HOME/awm/ssh/* $HOME/.ssh
 sudo chmod -R 400 $HOME/.ssh
 sudo chmod 755 $HOME/.ssh
-sudo apt-get install autossh
 echo "----------apt update"
 sudo apt update
 sudo apt upgrade
+echo "----------Install netcat"
+sudo apt-get install netcat -y
 echo "----------Install screen"
 sudo apt-get install screen -y
 echo "----------Remove modemmanager"
