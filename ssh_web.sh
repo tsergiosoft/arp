@@ -7,8 +7,8 @@ USER="ubuntu"
 #USER="tunkey"
 REMOTE_PORT="5000"
 LOCPORT="8080"
-#SSH_COMMAND="ssh -N -i ~/.ssh/$KEY -o ServerAliveCountMax=2 -o ServerAliveInterval=15 -R $REMOTE_PORT:localhost:$LOCPORT $USER@$CLOUDHOST"
-SSH_COMMAND="ssh -N -i ~/.ssh/$KEY -o ClientAliveInterval=15 -R $REMOTE_PORT:localhost:$LOCPORT $USER@$CLOUDHOST"
+SSH_COMMAND="ssh -N -i ~/.ssh/$KEY -o ServerAliveCountMax=2 -o ServerAliveInterval=15 -R $REMOTE_PORT:localhost:$LOCPORT $USER@$CLOUDHOST"
+
 
 #ssh -N -i ~/.ssh/tunkey -o ServerAliveCountMax=2 -o ServerAliveInterval=15 -R 5000:localhost:8080 tunkey@34.118.38.72
 #ssh -N -i ~/.ssh/tunaws.pem -o ServerAliveCountMax=2 -o ServerAliveInterval=5 -R 5000:localhost:8080 ubuntu@13.50.210.14
