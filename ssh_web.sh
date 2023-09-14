@@ -1,6 +1,6 @@
 #!/bin/bash
 CLOUDHOST="13.50.210.14"
-REMOTE_PORT="3000"
+REMOTE_PORT="5000"
 LOCPORT="8080"
 SSH_COMMAND="ssh -N -i ~/.ssh/tunaws.pem -o ServerAliveCountMax=2 -o ServerAliveInterval=10 -R $REMOTE_PORT:localhost:$LOCPORT ubuntu@$CLOUDHOST"
 
