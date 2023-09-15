@@ -10,11 +10,13 @@
 #----AWS terminal: $ sudo netstat --all --timers --program --numeric | grep ssh
 
 
-#GCS ssh -N -L 1234:localhost:5000 ubuntu@16.171.116.13 -v -i C:\Users\Tarasenko_S\.ssh\tunaws.pem
-# http://127.0.0.1:5000/
-#or -----------------http://16.171.116.13:5000/-----------
+#On Windows GCS possible to create redirect to localhost and run MissionPlanner with local connection
+#ssh -N -L 14550:localhost:14550 ubuntu@13.50.210.14 -v -i C:\Users\Tarasenko_S\.ssh\tunaws.pem
 #
-# Mission Planner -> Video->SetMJPEG source -> http://16.171.116.13:5000/?action=stream
+# Mission Planner -> Video->SetMJPEG source -> http://13.50.210.14:5000/?action=stream
+#
+# Connect from any to Raspi via SSh
+# ssh pi@13.50.210.14 -v -i C:\Users\Tarasenko_S\.ssh\tunaws.pem -p 5022
 
 HOME=/home/pi
 echo "home folder is"=$HOME
