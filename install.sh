@@ -13,6 +13,8 @@
 #GCS ssh -N -L 1234:localhost:5000 ubuntu@16.171.116.13 -v -i C:\Users\Tarasenko_S\.ssh\tunaws.pem
 # http://127.0.0.1:5000/
 #or -----------------http://16.171.116.13:5000/-----------
+#
+# Mission Planner -> Video->SetMJPEG source -> http://16.171.116.13:5000/?action=stream
 
 HOME=/home/pi
 echo "home folder is"=$HOME

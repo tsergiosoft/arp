@@ -11,7 +11,7 @@ SSH_COMMAND="ssh -N -i ~/.ssh/$KEY -o ServerAliveCountMax=2 -o ServerAliveInterv
 
 
 
-
+#sudo nano /etc/ssh/sshd_config
 
 
 
