@@ -5,7 +5,7 @@ USER="ubuntu"
 #KEY=tunaws.pem
 #CLOUDHOST="34.118.38.72"
 #USER="tunkey"
-REMOTE_PORT="14550"
+REMOTE_PORT="14551"
 LOCPORT="14550"
 SSH_COMMAND="ssh -N -i ~/.ssh/$KEY -o ServerAliveCountMax=2 -o ServerAliveInterval=15 -R $REMOTE_PORT:localhost:$LOCPORT $USER@$CLOUDHOST"
 
