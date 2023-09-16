@@ -2,18 +2,10 @@
 KEY="tunaws.pem"
 CLOUDHOST="13.50.210.14"
 USER="ubuntu"
-REMOTE_PORT="221"
+REMOTE_PORT="5022"
 LOCPORT="22"
 SSH_COMMAND="ssh -N -i ~/.ssh/$KEY -o ServerAliveCountMax=2 -o ServerAliveInterval=15 -R $REMOTE_PORT:localhost:$LOCPORT $USER@$CLOUDHOST"
 
-# sudo nano /etc/ssh/sshd_config
-
-#ssh -N -i ~/.ssh/tunkey -o ServerAliveCountMax=2 -o ServerAliveInterval=15 -R 5000:localhost:8080 tunkey@34.118.38.72
-#ssh -N -i ~/.ssh/tunaws.pem -o ServerAliveCountMax=2 -o ServerAliveInterval=5 -R 5000:localhost:8080 ubuntu@13.50.210.14
-#SSH_COMMAND="ssh -N -R $REMOTE_PORT:localhost:$LOCPORT ubuntu@$CLOUDHOST"
-#ssh -N -R 5000:localhost:8080 ubuntu@13.50.210.14
-#ncat --sh-exec "echo >/dev/null" -w 1 13.50.210.14 5000
-#nc -z -w 1 13.50.210.14 5000
 function ssh_remote_connect {
     while true; do
 	current_time=$(date +"%T")

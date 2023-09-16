@@ -2,9 +2,10 @@
 # .git\config [alias]	acp = ! git add . && git commit -a -m \"commit\" && git push
 # chmod 400 ~/.ssh/id_rsa
 # ssh-add
+#on AWS\Google -> sudo nano /etc/ssh/sshd_config -> GatewayEnable yes ClientAliveInterval 15 ClientAliveCountMax 2
 
 #RasPi ssh -N -i ~/.ssh/tunaws.pem -R 0.0.0.0:5000:localhost:8080 ubuntu@13.50.210.14 -v
-#RasPi ssh -N -i ~/.ssh/tunaws.pem -R 0.0.0.0:5000:localhost:8080 ubuntu@13.50.210.14
+#sudo systemctl status\stop\start awm.service
 #
 #Check from any host: Ubuntu: ssh -i ~/.ssh/tunaws.pem ubuntu@13.50.210.14
 #----AWS terminal: $ sudo netstat --all --timers --program --numeric | grep ssh
@@ -16,8 +17,11 @@
 # Mission Planner -> Video->SetMJPEG source -> http://13.50.210.14:5000/?action=stream
 #
 # Connect from any to Raspi via SSh
+# USER --pi---!!!!!
 # ssh pi@13.50.210.14 -v -i C:\Users\Tarasenko_S\.ssh\tunaws.pem -p 5022
-
+# Connect from AWS to Raspi via SSh
+# ssh pi@13.50.210.14 -v -i ~\.ssh\authorized_keys -p 5022
+ 
 HOME=/home/pi
 echo "home folder is"=$HOME
 echo "----------SSH copy"
