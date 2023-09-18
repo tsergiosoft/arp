@@ -119,3 +119,10 @@ echo "----------Install finish OK"
 ################################# On Ubuntu - create ssh
 #ssh-keygen -t ed25519 -C "sergtarasenko76@gmail.com"
 
+#sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+
+#wpa_cli -i wlan0 reconfigure
+# OR
+#sudo ifdown wlan0
+#sudo ifup wlan0
+
