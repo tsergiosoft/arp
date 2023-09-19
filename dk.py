@@ -4,12 +4,12 @@ import time
 
 import argparse  
 parser = argparse.ArgumentParser()
-parser.add_argument('--connect', default='127.0.0.1:14551')
+parser.add_argument('--connect', default='127.0.0.1:5760')
 args = parser.parse_args()
 
 # Connect to the Vehicle
 print ('Connecting to vehicle on: %s',args.connect)
-vehicle = connect('127.0.0.1:14551', baud=57600, wait_ready=True)
+vehicle = connect('127.0.0.1:5760', baud=57600, wait_ready=True)
 print ('Connecting ON')
 # Function to arm and then takeoff to a user specified altitude
 def arm_and_takeoff(aTargetAltitude):
