@@ -9,7 +9,7 @@ args = parser.parse_args()
 
 # Connect to the Vehicle
 print ('Connecting to vehicle on: %s',args.connect)
-vehicle = connect(args.connect, baud=57600, wait_ready=True)
+vehicle = connect('127.0.0.1:14551', baud=57600, wait_ready=True)
 print ('Connecting ON')
 # Function to arm and then takeoff to a user specified altitude
 def arm_and_takeoff(aTargetAltitude):
