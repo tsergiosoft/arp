@@ -51,11 +51,20 @@ pause 10
 screen -list
 echo "----------Install finish OK"
 --------------------------------------------END----------------------------------------------
+raspivid -o - -t 0 -hf -w 800 -h 600 -fps 12 |cvlc -vvv stream:///dev/stdin --sout '#standard{access=http,mux=ts,dst=:8160}' :demux=h264
+raspivid -t 0 -w 640 -h 480  -b 987654 -sg 5000 -o ~/video%03d.h264 | cvlc -vvv stream:///dev/stdin --sout '#standard{access=http,mux=ts,dst=:8160}' :demux=h264
+raspivid -t 0 -w 640 -h 480  -b 200000 -sg 5000 -wr 20 -o ~/test%03d.h264 | gst-launch-1.0 -v fdsrc !  h264parse ! gdppay ! udpsink host=127.0.0.1 port=8160
+raspivid -t 0 -w 640 -h 480  -b 200000 -sg 5000 -wr 20 -o ~/test%03d.h264 | gst-launch-1.0 -v fdsrc !  decodebin ! x264enc ! rtph264pay config-interval=1 pt=96 ! udpsink host=127.0.0.1 port=8160
+gst-launch-1.0 filesrc location=C:/Users/me/Desktop/big_buck_bunny.mp4 ! decodebin ! x264enc ! rtph264pay config-interval=1 pt=96 ! udpsink port=1234
+raspivid -t 0 | gst-launch-1.0 -v fdsrc ! video/x-raw,width=640,height=480,framerate=24/1 ! x264enc key-int-max=30 insert-vui=1 tune=zerolatency ! h264parse config-interval=1 ! mpegtsmux ! rtpmp2tpay ! udpsink host=127.0.0.1 port=8160
+raspivid -n -w 1280 -h 720 -fps 24 -b 4500000 -a 12 -t 0 -o - | gst-launch-1.0 -v fdsrc ! video/x-h264, width=1280, height=720, framerate=24/1 ! h264parse config-interval=1 ! mpegtsmux ! rtpmp2tpay ! udpsink host=127.0.0.1 port=8160
+raspivid -n -w 640 -h 480 -fps 24 -b 4500000 -a 12 -t 0 -o - | gst-launch-1.0 -v fdsrc ! video/x-h264, width=640, height=480, framerate=24/1 ! h264parse config-interval=-1 ! mpegtsmux ! udpsink host=127.0.0.1 port=8160
+
 # GStreamer
 # sudo apt-get install libx264-dev libjpeg-dev
-# sudo apt-get install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev gstreamer1.0-plugins-ugly gstreamer1.0-tools gstreamer1.0-gl gstreamer1.0-gtk3
-
-     
+# sudo apt-get install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev gstreamer1.0-plugins-ugly gstreamer1.0-tools gstreamer1.0-gl gstreamer1.0-gtk3 gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly
+# sudo apt-get install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-tools gstreamer1.0-x gstreamer1.0-alsa gstreamer1.0-gl gstreamer1.0-gtk3 gstreamer1.0-qt5 gstreamer1.0-pulseaudio     
+  
 # .git\config [alias]	acp = ! git add . && git commit -a -m \"commit\" && git push
 # chmod 400 ~/.ssh/id_rsa
 # ssh-add
