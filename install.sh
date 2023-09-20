@@ -1,26 +1,7 @@
 #!/bin/sh
-# .git\config [alias]	acp = ! git add . && git commit -a -m \"commit\" && git push
-# chmod 400 ~/.ssh/id_rsa
-# ssh-add
-#on AWS\Google -> sudo nano /etc/ssh/sshd_config -> GatewayEnable yes ClientAliveInterval 15 ClientAliveCountMax 2
-
-#RasPi ssh -N -i ~/.ssh/tunaws.pem -R 0.0.0.0:5000:localhost:8080 ubuntu@13.50.210.14 -v
-#sudo systemctl status\stop\start awm.service
-#
-#Check from any host: Ubuntu: ssh -i ~/.ssh/tunaws.pem ubuntu@13.50.210.14
-#----AWS terminal: $ sudo netstat --all --timers --program --numeric | grep ssh
-
-
-#On Windows GCS possible to create redirect to localhost and run MissionPlanner with local connection
-#ssh -N -L 14550:localhost:14550 ubuntu@13.50.210.14 -v -i C:\Users\Tarasenko_S\.ssh\tunaws.pem
-#
-# Mission Planner -> Video->SetMJPEG source -> http://13.50.210.14:5000/?action=stream
-#
-# Connect from any to Raspi via SSh
-# USER --pi---!!!!!
-# ssh pi@13.50.210.14 -v -i C:\Users\Tarasenko_S\.ssh\tunaws.pem -p 5022
-# Connect from AWS to Raspi via SSh
-# ssh pi@13.50.210.14 -v -i ~\.ssh\authorized_keys -p 5022
+#/boot/config.txt entries to disable both Bluetooth and WiFi.
+#dtoverlay=disable-bt
+#sudo nano ./wpa_supplicant/wpa_supplicant.conf 
  
 HOME=/home/pi
 echo "home folder is"=$HOME
@@ -70,6 +51,35 @@ pause 10
 screen -list
 echo "----------Install finish OK"
 --------------------------------------------END----------------------------------------------
+# GStreamer
+# sudo apt-get install libx264-dev libjpeg-dev
+# sudo apt-get install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev gstreamer1.0-plugins-ugly gstreamer1.0-tools gstreamer1.0-gl gstreamer1.0-gtk3
+
+     
+# .git\config [alias]	acp = ! git add . && git commit -a -m \"commit\" && git push
+# chmod 400 ~/.ssh/id_rsa
+# ssh-add
+#on AWS\Google -> sudo nano /etc/ssh/sshd_config -> GatewayEnable yes ClientAliveInterval 15 ClientAliveCountMax 2
+
+#RasPi ssh -N -i ~/.ssh/tunaws.pem -R 0.0.0.0:5000:localhost:8080 ubuntu@13.50.210.14 -v
+#sudo systemctl status\stop\start awm.service
+#
+#Check from any host: Ubuntu: ssh -i ~/.ssh/tunaws.pem ubuntu@13.50.210.14
+#----AWS terminal: $ sudo netstat --all --timers --program --numeric | grep ssh
+
+
+#On Windows GCS possible to create redirect to localhost and run MissionPlanner with local connection
+#ssh -N -L 14550:localhost:14550 ubuntu@13.50.210.14 -v -i C:\Users\Tarasenko_S\.ssh\tunaws.pem
+#
+# Mission Planner -> Video->SetMJPEG source -> http://13.50.210.14:5000/?action=stream
+#
+# Connect from any to Raspi via SSh
+# USER --pi---!!!!!
+# ssh pi@13.50.210.14 -v -i C:\Users\Tarasenko_S\.ssh\tunaws.pem -p 5022
+# Connect from AWS to Raspi via SSh
+# ssh pi@13.50.210.14 -v -i ~\.ssh\authorized_keys -p 5022
+
+
 #sudo apt install v4l-utils
 #sudo apt-get install libjpeg8-dev imagemagick libv4l-dev
 #ffmpeg -i /dev/video0 -vframes 1 output.png
@@ -82,10 +92,7 @@ echo "----------Install finish OK"
 #v4l2-ctl --list-formats-ext
 # http://picamera.readthedocs.io/en/latest/recipes2.html#web-streaming
 
-#/boot/config.txt entries to disable both Bluetooth and WiFi.
-#dtoverlay=disable-bt
-#dtoverlay=disable-wifi
-#sudo nano ./wpa_supplicant/wpa_supplicant.conf 
+
  
 #sed -i -e '$aexport LOCALAPPDATA="LOCALAPPDATA"' /home/pi/.bashrc
 #sed -i -e '$ascreen -L -Logfile mavproxy.log -S mavproxy -d -m bash -c "mavproxy.py --master=/dev/serial0 --force-connected --baudrate 921600 --out=udp:10.243.0.1:14550 --daemon"' /home/pi/.bashrc
