@@ -1013,8 +1013,6 @@ class Picamera2:
 
     def start_(self) -> None:
         """Start the camera system running."""
-        _log.error("HELLO log.error")
-        raise RuntimeError("HELLO Runtime error")
         if self.camera_config is None:
             raise RuntimeError("Camera has not been configured")
         if self.started:
@@ -1045,6 +1043,9 @@ class Picamera2:
             value None would mean no event loop runs at all and you would have to
             implement your own.
         """
+        print("HELLO FROM print")
+        _log.error("HELLO log.error")
+        raise RuntimeError("HELLO Runtime error")
         if self.camera_config is None and config is None:
             config = "preview"
         if config is not None:
