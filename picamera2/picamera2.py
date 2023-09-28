@@ -1013,7 +1013,8 @@ class Picamera2:
 
     def start_(self) -> None:
         """Start the camera system running."""
-        print("HELLO FROM ME!!!!!!!!!!!!!!!!!!!1")
+        _log.error("HELLO log.error")
+        raise RuntimeError("HELLO Runtime error")
         if self.camera_config is None:
             raise RuntimeError("Camera has not been configured")
         if self.started:
