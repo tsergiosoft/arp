@@ -1012,19 +1012,20 @@ class Picamera2:
         return self.camera_config[name]
 
     def start_(self) -> None:
-        """Start the camera system running."""
-        if self.camera_config is None:
-            raise RuntimeError("Camera has not been configured")
-        if self.started:
-            return
-        controls = self.controls.get_libcamera_controls()
-        self.controls = Controls(self)
-        # camera.start() now throws an error if it fails.
-        self.camera.start(controls)
-        for request in self._make_requests():
-            self.camera.queue_request(request)
-        _log.info("Camera started")
-        self.started = True
+        pass
+        # """Start the camera system running."""
+        # if self.camera_config is None:
+        #     raise RuntimeError("Camera has not been configured")
+        # if self.started:
+        #     return
+        # controls = self.controls.get_libcamera_controls()
+        # self.controls = Controls(self)
+        # # camera.start() now throws an error if it fails.
+        # self.camera.start(controls)
+        # for request in self._make_requests():
+        #     self.camera.queue_request(request)
+        # _log.info("Camera started")
+        # self.started = True
 
     def start(self, config=None, show_preview=False) -> None:
         """
