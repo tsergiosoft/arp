@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """picamera2 main class"""
+#tsergiosoft
 
 import json
 import logging
@@ -205,7 +206,6 @@ class Picamera2:
 
     def __init__(self, camera_num=0, verbose_console=None, tuning=None):
         """Initialise camera system and open the camera for use.
-
         :param camera_num: Camera index, defaults to 0
         :type camera_num: int, optional
         :param verbose_console: Unused
